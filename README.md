@@ -1,4 +1,4 @@
-# Jaeger Example
+# java-opentelemetry-jaeger
 
 This is a simple example that demonstrates how to use the OpenTelemetry SDK 
 to instrument a simple application and export to a Jaeger backend.
@@ -13,7 +13,7 @@ to instrument a simple application and export to a Jaeger backend.
 
 ## 1 - Compile 
 ```shell script
-../gradlew shadowJar
+gradle build
 ```
 ## 2 - Run Jaeger
 
@@ -28,10 +28,13 @@ docker run --rm -it --name jaeger\
 
 ## 3 - Start the Application
 ```shell script
-java -cp build/libs/opentelemetry-examples-jaeger-0.1.0-SNAPSHOT-all.jar io.opentelemetry.example.jaeger.JaegerExample http://localhost:4317
+java -jar build/libs/opentelemetry-examples-jaeger-0.1.0-SNAPSHOT-all.jar http://localhost:4317
 ```
 ## 4 - Open the Jaeger UI
 
 Navigate to http://localhost:16686
 
 [jaeger]: https://www.jaegertracing.io/docs/1.16/getting-started/
+
+## Study Credits
+  https://github.com/open-telemetry/opentelemetry-java-examples/tree/main/jaeger
