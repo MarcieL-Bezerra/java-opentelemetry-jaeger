@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+
+}
+
+description = "OpenTelemetry Examples for Jaeger Backend"
+group = "io.opentelemetry"
+version = "0.1.0"
+sourceCompatibility = '11'
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation(platform("io.opentelemetry:opentelemetry-bom-alpha:1.38.0-alpha"))
+    implementation(platform("io.opentelemetry.instrumentation:opentelemetry-instrumentation-bom-alpha:2.4.0-alpha"))
+    implementation("io.opentelemetry:opentelemetry-api")
+    implementation("io.opentelemetry:opentelemetry-sdk")
+    implementation("io.opentelemetry:opentelemetry-exporter-otlp")
+
+    //alpha module
+    implementation("io.opentelemetry.semconv:opentelemetry-semconv")
+}
